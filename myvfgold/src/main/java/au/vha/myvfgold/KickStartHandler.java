@@ -11,6 +11,6 @@ public class KickStartHandler implements RequestHandler<String, String> {
     	Date date = new Date();
         context.getLogger().log("AWS Request ID: " + context.getAwsRequestId());
         context.getLogger().log("Input: " + input + " at " + Calendar.getInstance().getTimeInMillis());
-        return "Cheers. ...We have started....CI/CD done....WebHook test 29Mar-0................----> "+date;
+        return "Cheers. ...We have started....CI/CD done....WebHook test 29Mar-Hook 1................----> "+date;
     }
 }
