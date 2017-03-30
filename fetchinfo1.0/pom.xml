@@ -75,7 +75,7 @@
 
  <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>2.6</version>
         <configuration>
           <descriptors>
             <descriptor>src/main/resources/packaging.xml</descriptor>
