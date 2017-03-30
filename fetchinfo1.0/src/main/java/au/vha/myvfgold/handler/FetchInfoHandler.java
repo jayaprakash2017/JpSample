@@ -7,13 +7,14 @@ import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 import au.vha.myvfgold.model.GetInfoRequest;
 import au.vha.myvfgold.model.GetInfoResponse;
 import au.vha.myvfgold.util.RequestValidator;
 
-public class FetchInfoHandler
-{
+public class FetchInfoHandler implements RequestHandler<GetInfoRequest, String>
+ {
     public String handleRequest(GetInfoRequest getInfoRequest, Context arg1)
     {
         String responseJson = null;
