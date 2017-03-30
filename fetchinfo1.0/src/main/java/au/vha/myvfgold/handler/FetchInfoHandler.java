@@ -13,7 +13,7 @@ import au.vha.myvfgold.model.GetInfoRequest;
 import au.vha.myvfgold.model.GetInfoResponse;
 import au.vha.myvfgold.util.RequestValidator;
 
-public class FetchInfoHandler   implements RequestHandler
+public class FetchInfoHandler   implements RequestHandler<Object,String>
 {
 
     public FetchInfoHandler()
@@ -51,7 +51,7 @@ public class FetchInfoHandler   implements RequestHandler
         return responseJson;
     }
 
-    public Object handleRequest(Object arg0, Context arg1)
+    public String handleRequest(Object arg0, Context arg1)
     {
         return null;
     }
