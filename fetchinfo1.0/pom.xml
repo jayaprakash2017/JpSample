@@ -78,7 +78,7 @@
         <version>3.0.0</version>
         <configuration>
           <descriptors>
-            <descriptor>src/main/resources/Packaging.xml</descriptor>
+            <descriptor>src/main/resources/packaging.xml</descriptor>
           </descriptors>
           <finalName>${project.build.finalName}-${pom.version}</finalName>
         </configuration>
