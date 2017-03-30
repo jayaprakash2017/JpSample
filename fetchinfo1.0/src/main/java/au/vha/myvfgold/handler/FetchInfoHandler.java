@@ -51,9 +51,36 @@ public class FetchInfoHandler   implements RequestHandler<Object,String>
         return responseJson;
     }
 
-    public String handleRequest(Object arg0, Context arg1)
+    public String handleRequest(Object getInfoRequest1, Context arg1)
     {
-        return null;
+        String responseJson = null;
+        RequestValidator requestValidator = new RequestValidator();
+        GetInfoRequest getInfoRequest = (GetInfoRequest) getInfoRequest1;
+        if(requestValidator.isValidMsisdn(getInfoRequest.getMsisdn()))
+        {
+            GetInfoResponse getInfoResponse = new GetInfoResponse();
+            getInfoResponse.setMsisdn(getInfoRequest.getMsisdn());
+            getInfoResponse.setName("Lamda POST Tester");
+            getInfoResponse.setVoiceUsage(new BigDecimal(100));
+            getInfoResponse.setDataUsage(new BigDecimal(100.2D));
+            ObjectMapper mapper = new ObjectMapper();
+            try
+            {
+                responseJson = mapper.writeValueAsString(getInfoResponse);
+            }
+            catch(JsonProcessingException e)
+            {
+                e.printStackTrace();
+            }
+            catch(IOException e)
+            {
+                e.printStackTrace();
+            }
+        } else
+        {
+            responseJson = "{\"statusCode\":100,\"statusMessage\":\"Invalid Msisdn\"}";
+        }
+        return responseJson;
     }
 
 
