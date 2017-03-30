@@ -12,7 +12,7 @@ public class RequestValidatorTest {
 	@Test
 	public void testMsisdn_Blank() {
 		String msisdn = "";
-		Boolean expectedResult = true;
+		Boolean expectedResult = false;
 		Boolean actualResult = requestValidator.isValidMsisdn(msisdn);
 		Assert.assertEquals(expectedResult, actualResult);
 	} 
