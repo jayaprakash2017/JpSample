@@ -16,6 +16,8 @@
     <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
     <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
     <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+     <surefire.argLine>-javaagent:${jacoco.agent.jar}=destfile=${jacoco.report.path}</surefire.argLine>
+    
  
  </properties>
   
@@ -49,7 +51,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
-			<scope>test</scope>
 		</dependency>
     
     <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
@@ -114,16 +115,10 @@
             </executions>
             <configuration>
                 <destFile>${sonar.jacoco.reportPath}</destFile>
+                <argLine>${surefire.argLine}</argLine>
             </configuration>
         </plugin>
-		
-		<plugin> 
-        <groupId>org.codehaus.mojo</groupId> 
-        <artifactId>cobertura-maven-plugin</artifactId> 
-        <version>2.3</version> 
-</plugin>
-
-
+	
  </plugins>
  
   </build>
