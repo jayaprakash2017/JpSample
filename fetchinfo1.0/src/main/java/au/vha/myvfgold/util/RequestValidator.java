@@ -9,6 +9,7 @@ public class RequestValidator {
 	    if (msisdn == null) {
 	      return false;
 	    }
+	    
 	    validationResult = Boolean.valueOf(msisdn.matches(regex));
 	    
 	    return validationResult.booleanValue();
