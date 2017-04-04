@@ -25,7 +25,7 @@ public class FetchInfoHandler implements RequestHandler<GetInfoRequest, String>
             getInfoResponse.setMsisdn(getInfoRequest.getMsisdn());
             getInfoResponse.setName("Lamda Test User 2 accessed on 04-Apr");
             getInfoResponse.setVoiceUsage(new BigDecimal(100));
-            getInfoResponse.setDataUsage(new BigDecimal(100.2D));
+            getInfoResponse.setDataUsage(new BigDecimal("100.20"));
             ObjectMapper mapper = new ObjectMapper();
             try
             {
