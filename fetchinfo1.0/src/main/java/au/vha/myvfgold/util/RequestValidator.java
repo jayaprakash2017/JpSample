@@ -4,7 +4,7 @@ public class RequestValidator {
 
 	  public boolean isValidMsisdn(String msisdn)
 	  {
-	    Boolean validationResult = Boolean.valueOf(false);
+	    Boolean validationResult;
 	    String regex = "\\d+";
 	    if (msisdn == null) {
 	      return false;
