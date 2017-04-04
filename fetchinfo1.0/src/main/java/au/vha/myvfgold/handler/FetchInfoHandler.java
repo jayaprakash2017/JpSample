@@ -15,7 +15,7 @@ import au.vha.myvfgold.util.RequestValidator;
 
 public class FetchInfoHandler implements RequestHandler<GetInfoRequest, String>
  {
-    public String handleRequest(GetInfoRequest getInfoRequest, Context arg1)
+    public String handleRequest(GetInfoRequest getInfoRequest, Context context)
     {
         String responseJson = null;
         RequestValidator requestValidator = new RequestValidator();
@@ -31,13 +31,13 @@ public class FetchInfoHandler implements RequestHandler<GetInfoRequest, String>
             {
                 responseJson = mapper.writeValueAsString(getInfoResponse);
             }
-            catch(JsonProcessingException e)
+            catch(JsonProcessingException je)
             {
-                e.printStackTrace();
+            	 context.getLogger().log("Json Parsing Exception Occured {}"+ je);
             }
-            catch(IOException e)
+            catch(IOException ie)
             {
-                e.printStackTrace();
+            	 context.getLogger().log("IOException Occured {}"+ ie);
             }
         } else
         {
