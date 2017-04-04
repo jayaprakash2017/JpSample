@@ -23,7 +23,7 @@ public class FetchInfoHandler implements RequestHandler<GetInfoRequest, String>
         {
             GetInfoResponse getInfoResponse = new GetInfoResponse();
             getInfoResponse.setMsisdn(getInfoRequest.getMsisdn());
-            getInfoResponse.setName("Lamda Test User 2 accessed on 04-Apr");
+            getInfoResponse.setName("Lamda Test User 3 accessed on 04-Apr");
             getInfoResponse.setVoiceUsage(new BigDecimal(100));
             getInfoResponse.setDataUsage(new BigDecimal("100.20"));
             ObjectMapper mapper = new ObjectMapper();
